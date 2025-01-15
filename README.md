@@ -53,6 +53,8 @@ If you are just starting to implement RCPs in your environment, consider our top
 
 * [Blog: Introducing resource control policies (RCPs), a new type of authorization policy in AWS Organizations](https://aws.amazon.com/blogs/aws/introducing-resource-control-policies-rcps-a-new-authorization-policy/)
 
+* [Blog: Enforcing enterprise-wide preventive controls with AWS Organizations](https://aws.amazon.com/blogs/mt/enforcing-enterprise-wide-preventive-controls-with-aws-organizations/)
+
 * [Data perimeters on AWS](https://aws.amazon.com/identity/data-perimeters-on-aws/)
 
 
