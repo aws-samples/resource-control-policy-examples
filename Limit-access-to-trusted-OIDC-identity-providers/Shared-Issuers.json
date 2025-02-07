@@ -1,0 +1,290 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Sid": "EnforceTrustedOIDCTenantTerraformCloud",
+        "Effect": "Deny",
+        "Principal": "*",
+        "Action": "sts:AssumeRoleWithWebIdentity",
+        "Resource": "*",
+        "Condition": {
+          "StringNotLikeIfExists": {
+            "app.terraform.io:sub": "organization:<ORG_NAME>:*"
+          },
+          "Null": {
+            "app.terraform.io:sub": "false"
+          }
+        }
+      },
+      {
+        "Sid": "EnforceTrustedOIDCTenantGitLabCLoud",
+        "Effect": "Deny",
+        "Principal": "*",
+        "Action": "sts:AssumeRoleWithWebIdentity",
+        "Resource": "*",
+        "Condition": {
+          "StringNotLikeIfExists": {
+            "gitlab.com:sub": "project_path:mygroup/*"
+          },
+          "Null": {
+            "gitlab.com:sub": "false"
+          }
+        }
+      },
+      {
+        "Sid": "EnforceTrustedOIDCTenantIbmTurboNomic1",
+        "Effect": "Deny",
+        "Principal": "*",
+        "Action": "sts:AssumeRoleWithWebIdentity",
+        "Resource": "*",
+        "Condition": {
+          "StringNotLikeIfExists": {
+            "rh-oidc.s3.us-east-1.amazonaws.com/22ejnvnnturfmt6km08idd0nt4hekbn7:sub": "system:serviceaccount:<TENANT_ID>:*"
+          },
+          "Null": {
+            "rh-oidc.s3.us-east-1.amazonaws.com/22ejnvnnturfmt6km08idd0nt4hekbn7:sub": "false"
+          }
+        }
+      },
+      {
+        "Sid": "EnforceTrustedOIDCTenantIbmTurboNomic2",
+        "Effect": "Deny",
+        "Principal": "*",
+        "Action": "sts:AssumeRoleWithWebIdentity",
+        "Resource": "*",
+        "Condition": {
+          "StringNotLikeIfExists": {
+            "rh-oidc.s3.us-east-1.amazonaws.com/23e3sd27sju1hoou6ohfs68vbno607tr:sub": "system:serviceaccount:<TENANT_ID>:*"
+          },
+          "Null": {
+            "rh-oidc.s3.us-east-1.amazonaws.com/23e3sd27sju1hoou6ohfs68vbno607tr:sub": "false"
+          }
+        }
+      },
+      {
+        "Sid": "EnforceTrustedOIDCTenantIbmTurboNomic3",
+        "Effect": "Deny",
+        "Principal": "*",
+        "Action": "sts:AssumeRoleWithWebIdentity",
+        "Resource": "*",
+        "Condition": {
+          "StringNotLikeIfExists": {
+            "rh-oidc.s3.us-east-1.amazonaws.com/23ne21h005qjl3n33d8dui5dlrmv2tmg:sub": "system:serviceaccount:<TENANT_ID>:*"
+          },
+          "Null": {
+            "rh-oidc.s3.us-east-1.amazonaws.com/23ne21h005qjl3n33d8dui5dlrmv2tmg:sub": "false"
+          }
+        }
+      },
+      {
+        "Sid": "EnforceTrustedOIDCTenantIbmTurboNomic4",
+        "Effect": "Deny",
+        "Principal": "*",
+        "Action": "sts:AssumeRoleWithWebIdentity",
+        "Resource": "*",
+        "Condition": {
+          "StringNotLikeIfExists": {
+            "rh-oidc.s3.us-east-1.amazonaws.com/24jrf12m5dj7ljlfb4ta2frhrcoadm26:sub": "system:serviceaccount:<TENANT_ID>:*"
+          },
+          "Null": {
+            "rh-oidc.s3.us-east-1.amazonaws.com/24jrf12m5dj7ljlfb4ta2frhrcoadm26:sub": "false"
+          }
+        }
+      },
+      {
+        "Sid": "EnforceTrustedOIDCTenantIbmTurboNomic5",
+        "Effect": "Deny",
+        "Principal": "*",
+        "Action": "sts:AssumeRoleWithWebIdentity",
+        "Resource": "*",
+        "Condition": {
+          "StringNotLikeIfExists": {
+            "oidc.op1.openshiftapps.com/2f785sojlpb85i7402pk3qogugim5nfb:sub": "system:serviceaccount:<TENANT_ID>:*"
+          },
+          "Null": {
+            "oidc.op1.openshiftapps.com/2f785sojlpb85i7402pk3qogugim5nfb:sub": "false"
+          }
+        }
+      },
+      {
+        "Sid": "EnforceTrustedOIDCTenantIbmTurboNomic6",
+        "Effect": "Deny",
+        "Principal": "*",
+        "Action": "sts:AssumeRoleWithWebIdentity",
+        "Resource": "*",
+        "Condition": {
+          "StringNotLikeIfExists": {
+            "oidc.op1.openshiftapps.com/2c51blsaqa9gkjt0o9rt11mle8mmropu:sub": "system:serviceaccount:<TENANT_ID>:*"
+          },
+          "Null": {
+            "oidc.op1.openshiftapps.com/2c51blsaqa9gkjt0o9rt11mle8mmropu:sub": "false"
+          }
+        }
+      },
+      {
+        "Sid": "EnforceTrustedOIDCTenantShishoDev",
+        "Effect": "Deny",
+        "Principal": "*",
+        "Action": "sts:AssumeRoleWithWebIdentity",
+        "Resource": "*",
+        "Condition": {
+          "StringNotLikeIfExists": {
+            "tokens.cloud.shisho.dev:sub": "job:<shisho_cloud_org_id>:*"
+          },
+          "Null": {
+            "tokens.cloud.shisho.dev:sub": "false"
+          }
+        }
+      },
+      {
+        "Sid": "EnforceTrustedOIDCTenantScalr",
+        "Effect": "Deny",
+        "Principal": "*",
+        "Action": "sts:AssumeRoleWithWebIdentity",
+        "Resource": "*",
+        "Condition": {
+          "StringNotLikeIfExists": {
+            "scalr.io:sub": "account:<account-name>:*"
+          },
+          "Null": {
+            "scalr.io:sub": "false"
+          }
+        }
+      },
+      {
+        "Sid": "EnforceTrustedOIDCTenantGithubLogStreaming",
+        "Effect": "Deny",
+        "Principal": "*",
+        "Action": "sts:AssumeRoleWithWebIdentity",
+        "Resource": "*",
+        "Condition": {
+          "StringNotEqualsIfExists": {
+            "oidc-configuration.audit-log.githubusercontent.com:sub": "https://github.com/<ENTERPRISE-SLUG>"
+          },
+          "Null": {
+            "oidc-configuration.audit-log.githubusercontent.com:sub": "false"
+          }
+        }
+      },
+      {
+        "Sid": "EnforceTrustedOIDCTenantPulumi",
+        "Effect": "Deny",
+        "Principal": "*",
+        "Action": "sts:AssumeRoleWithWebIdentity",
+        "Resource": "*",
+        "Condition": {
+          "StringNotLikeIfExists": {
+            "api.pulumi.com:sub": "pulumi:*:org:<organization>:*"
+          },
+          "Null": {
+            "api.pulumi.com:sub": "false"
+          }
+        }
+      },
+      {
+        "Sid": "EnforceTrustedOIDCTenantBuildKite",
+        "Effect": "Deny",
+        "Principal": "*",
+        "Action": "sts:AssumeRoleWithWebIdentity",
+        "Resource": "*",
+        "Condition": {
+          "StringNotLikeIfExists": {
+            "agent.buildkite.com:sub": "organization:<ORGANIZATION_SLUG>:*"
+          },
+          "Null": {
+            "agent.buildkite.com:sub": "false"
+          }
+        }
+      },
+      {
+        "Sid": "EnforceTrustedOIDCTenantUpbound",
+        "Effect": "Deny",
+        "Principal": "*",
+        "Action": "sts:AssumeRoleWithWebIdentity",
+        "Resource": "*",
+        "Condition": {
+          "StringNotLikeIfExists": {
+            "proidc.upbound.io:sub": "mcp:<ORGANIZATION_NAME>:*"
+          },
+          "Null": {
+            "proidc.upbound.io:sub": "false"
+          }
+        }
+      },
+      {
+        "Sid": "EnforceTrustedOIDCTenantGithubActionsSelfHosted",
+        "Effect": "Deny",
+        "Principal": "*",
+        "Action": "sts:AssumeRoleWithWebIdentity",
+        "Resource": "*",
+        "Condition": {
+          "StringNotLikeIfExists": {
+            "vstoken.actions.githubusercontent.com:sub": "repo:<ENTERPRISE_SLUG>/*"
+          },
+          "Null": {
+            "vstoken.actions.githubusercontent.com:sub": "false"
+          }
+        }
+      },
+      {
+        "Sid": "EnforceTrustedOIDCTenantVercel",
+        "Effect": "Deny",
+        "Principal": "*",
+        "Action": "sts:AssumeRoleWithWebIdentity",
+        "Resource": "*",
+        "Condition": {
+          "StringNotLikeIfExists": {
+            "oidc.vercel.com:sub": "owner:<TEAM_SLUG>:*"
+          },
+          "Null": {
+            "oidc.vercel.com:sub": "false"
+          }
+        }
+      },
+      {
+        "Sid": "EnforceTrustedOIDCTenantSandBoxes",
+        "Effect": "Deny",
+        "Principal": "*",
+        "Action": "sts:AssumeRoleWithWebIdentity",
+        "Resource": "*",
+        "Condition": {
+          "StringNotEqualsIfExists": {
+            "sandboxes.cloud:aud": "<ORGNAME>"
+          },
+          "Null": {
+            "sandboxes.cloud:aud": "false"
+          }
+        }
+      },
+      {
+        "Sid": "EnforceTrustedOIDCTenantDataChain",
+        "Effect": "Deny",
+        "Principal": "*",
+        "Action": "sts:AssumeRoleWithWebIdentity",
+        "Resource": "*",
+        "Condition": {
+          "StringNotLikeIfExists": {
+            "studio.datachain.ai/api:sub": "credentials:<example-team>/*"
+          },
+          "Null": {
+            "studio.datachain.ai/api:sub": "false"
+          }
+        }
+      },
+      {
+        "Sid": "EnforceTrustedOIDCTenantCodeFresh",
+        "Effect": "Deny",
+        "Principal": "*",
+        "Action": "sts:AssumeRoleWithWebIdentity",
+        "Resource": "*",
+        "Condition": {
+          "StringNotLikeIfExists": {
+            "oidc.codefresh.io:sub": "account:<account_id>:*"
+          },
+          "Null": {
+            "oidc.codefresh.io:sub": "false"
+          }
+        }
+      }
+    ]
+  }
