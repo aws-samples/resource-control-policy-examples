@@ -12,16 +12,16 @@
 
 
 
-### Specific example controls for tenancy within multi tenant providers using OIDC with a shared issuer URL
+### Specific example controls for tenancy within multi-tenant OIDC providers with a shared issuer URL
 
 [Enforce only specific tenants within providers with a shared issuer URL](Shared-Issuers.json) 
 
-Some third party services that integrate with AWS using OIDC use a shared "issuer" (iss) URL for all their tenants within their service. The use of a shared issuer URL means that IAM roles configured to use these third party services' OIDC integrations require checks with condition keys in their role trust policies to ensure that other tenants from those third party services cannot assume your IAM roles and access your AWS resources.
+Some third party services that integrate with AWS using OIDC use a shared "issuer" (iss) URL for all their tenants within their service. The use of a shared issuer URL means that IAM roles configured to use these third party services' OIDC integrations require checks with condition keys in their role trust policies to ensure that other tenants from those third party services beyond what you intend cannot assume your IAM roles and access your AWS resources.
 
-These example RCP statements when applied help ensure that only your tenant from these services that integrate with AWS using OIDC can assume your roles and access your resources, even when a role trust policy is misconfigured and is not checking for the tenancy. The [sample policy](Shared-Issuers.json) has one statement per a service's issuer URL with the example controls based on their documentation to help ensure that only your tenant from their platform can asumme your IAM roles. The placeholder value to identify tenancy with these services located within the angle brackets, "<>" , is the term used by each services's documentation. To use the [sample policy](Shared-Issuers.json), you only need to use the statements for the third party services that are you wish to use in your AWS organization.
+These example RCP statements when applied help ensure that only your tenant from these third party services that integrate with AWS using OIDC can assume your roles and access your resources, even when a role trust policy is misconfigured and is not checking for the tenancy. The [sample policy](Shared-Issuers.json) has one statement per a service's issuer URL with the example controls based on their documentation to help ensure that only your tenant from their platform can assume your IAM roles. The placeholder value to identify tenancy with these services located within the angle brackets, "<>" , is the term used by each services' documentation. To use the [sample policy](Shared-Issuers.json), you only need to use the statements for the third party services that you wish to use in your AWS organization.
 
 
-Here is a list of all covered services and their documentation:
+Here is a list of all service providers covered in this sample, and their documentation:
 
 
 | Provider                          | Documentation                                                                                          | Issuer/OIDC Provider URL                                              |    Policy Statement in [Shared-Issuers.json](Shared-Issuers.json)         |
@@ -41,4 +41,6 @@ Here is a list of all covered services and their documentation:
 | Datachain.ai                       | [Datachain Docs](https://dvc.org/doc/studio/user-guide/openid-connect)                             | https://studio.datachain.ai/api | EnforceTrustedOIDCTenantDataChain |
 | Codefresh                          | [Codefresh Docs](https://codefresh.io/docs/docs/integrations/oidc-pipelines/)                      | https://oidc.codefresh.io | EnforceTrustedOIDCTenantCodeFresh |
 
-This list may not include all possible third parties that use a shared issuer URL with their OIDC integration to access AWS accounts. Please review all relevant documentation from your service providers to ensure your security objectives are met when configuring an OIDC integration to AWS from your third party service providers.
+This list may not include all possible third party service providers that use a shared issuer URL with their OIDC integration to access AWS accounts. Please review all relevant documentation from your service providers to ensure your security objectives are met when configuring an OIDC integration to AWS from your third party service providers.
+
+Please note this sample with all providers, and all the included whitespace is larger than the RCP size limit. You can reduce the size of the policy by removing statements for unneeded providers and removing whitespace.
