@@ -17,6 +17,8 @@
 |AWS Key Management Service (KMS)|[Deny AWS Key Management Service asymmetric key with RSA key material with key length of 2048 bits](KMS-Deny-AWS-Key-Management-Service-asymmetric-key-with-RSA-key-material-used-for-encryption-with-key-length-of-2048-bits.json) |Stronger RSA keys (3072-bit or 4096-bit) are recommended to provide better security.|
 |AWS Key Management Service (KMS)|[Require that an AWS KMS key is configured with the bypass policy lockout safety check enabled](KMS-Require-that-an-AWS-KMS-key-is-configured-with-the-bypass-policy-lockout-safety-check-enabled.json) |Deny bypassing the KMS key policy lockout safety check when creating a KMS key or updating its key policy, because bypassing this check increases the risk that a KMS key becomes unmanageable.|
 |AWS Key Management Service (KMS)|[Deny the accidental or intentional deletion of a KMS key and only allow specific roles to delete KMS keys.](KMS-Deny-the-accidental-or-intentional-deletion-of-a-KMS-key-and-only-allow-specific-roles-to-delete-KMS-keys.json)|Deny the accidental or intentional deletion of a KMS key and only allow specific roles to delete KMS keys.|
+|AWS SQS |[Prevent unintended exposure of SQS queue access to IAM principals outside the AWS Organization](SQS-Deny-access-outside-org-access.json)|Deny accidental exposure of SQS queue|
+|AWS SQS |[Prevent unintended exposure of SQS queue message deletion to IAM principals outside the AWS Organization](SQS-Deny-access-outside-org-access.json)|Deny accidental exposure of SQS queue|
 
 
 
