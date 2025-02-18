@@ -24,7 +24,7 @@
         "Resource": "*",
         "Condition": {
           "StringNotLikeIfExists": {
-            "gitlab.com:sub": "project_path:mygroup/*"
+            "gitlab.com:sub": "project_path:<mygroup>/*"
           },
           "Null": {
             "gitlab.com:sub": "false"
