@@ -1,0 +1,18 @@
+{
+   "Version": "2012-10-17",
+   "Statement": [
+      {
+         "Effect": "Deny",
+         "Principal": "*",
+         "Action": "s3:*",
+         "Resource": "*",
+         "Condition": {
+            "NumericLessThan": {
+               "s3:signatureAge": [
+                  "[MAX_SIGNATURE_AGE_IN_MILLISECONDS]"
+               ]
+            }
+         }
+      }
+   ]
+}
