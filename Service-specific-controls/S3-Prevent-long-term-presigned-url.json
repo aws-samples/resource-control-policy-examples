@@ -7,7 +7,7 @@
          "Action": "s3:*",
          "Resource": "*",
          "Condition": {
-            "NumericLessThan": {
+            "NumericGreaterThan": {
                "s3:signatureAge": [
                   "[MAX_SIGNATURE_AGE_IN_MILLISECONDS]"
                ]
