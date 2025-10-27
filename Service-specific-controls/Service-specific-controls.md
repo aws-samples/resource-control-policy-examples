@@ -5,7 +5,7 @@
 **Note**: Some controls in this section can be implemented using either service control policies (SCPs) or resource control policies (RCPs) as mentioned in the rational column next to the policy. Note that SCPs affect only IAM principals that are managed by accounts that are part of the organization. RCPs impact the effective permissions of principals trying to access resources in a member account with an applicable RCP, regardless of whether the principals belong to the same organizations or not.
 
 
-|Service | Included Policy | Rational | 
+|Service | Included Policy | Rationale | 
 |------|-------------|-------------|
 |Amazon Simple Storage Service (S3)|[Enforce TLS version](S3-Enforce-TLS-version.json) | Require a minimum TLS version of 1.2 for access to S3 buckets.|
 |Amazon Simple Storage Service (S3)|[Deny users from deleting Amazon S3 Buckets or objects](S3-Deny-users-from-deleting-Amazon-S3-Buckets-or-objects.json) | Restrict users or roles in any affected account from deleting S3 bucket or objects. This control can be implemented using either SCP or RCP.|
