@@ -3,7 +3,7 @@
 * OIDC federation can be used to give temporary security credentials to users who have been authenticated through an OpenID Connect compatible identity provider (IdP) to an IAM OpenID Connect (OIDC) identity provider in your AWS environment. This section outlines control examples that govern the authorization mechanisms used by external OIDC identity providers (IdPs) to grant access to your organization's resources.
 
 
-| Service Provider | Rational | 
+| Service Provider | Rationale | 
 |-------------|-------------|
 |[Enforce trusted OIDC providers](https://github.com/aws-samples/data-perimeter-policy-examples/blob/4bc433ff6c4721049fc2eb542c89246343b5fb8a/resource_control_policies/identity_perimeter_rcp.json#L55C19-L55C49) | Limit access to sts:AssumeRoleWithWebIdentity to only federated identities associated with a specific OIDC provider.|
 |[Enforce trusted OIDC tenants](https://github.com/aws-samples/data-perimeter-policy-examples/blob/4bc433ff6c4721049fc2eb542c89246343b5fb8a/resource_control_policies/identity_perimeter_rcp.json#L39C19-L39C44) | Limit access to sts:AssumeRoleWithWebIdentity to only federated identities originating from your tenant of a trusted multi-tenant OIDC provider. |
