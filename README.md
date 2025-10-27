@@ -23,13 +23,13 @@ The example policies are divided into different categories based on the type of 
 
 * **[Data perimeter guardrails](https://github.com/aws-samples/data-perimeter-policy-examples)** : Enforce preventive controls that help ensure only your trusted identities are accessing trusted resources from expected networks.
 
-* **[Establish intra-organization boundaries](Establish-intra-organization-boundaries/Establish-intra-organization-boundaries.md)**: Controls that define boundaries and access controls between different organization units within your organization.
+* **[Establish intra-organization boundaries](Establish-intra-organization-boundaries/README.md)**: Controls that define boundaries and access controls between different organization units within your organization.
 
-* **[Restrict resource access patterns](Restrict-resource-access-patterns/Restrict-resource-access-patterns.md)**: Controls that enforce specific rules on the methods used to access your organization's resources, ensuring that only compliant access patterns are permitted.   
+* **[Restrict resource access patterns](Restrict-resource-access-patterns/README.md)**: Controls that enforce specific rules on the methods used to access your organization's resources, ensuring that only compliant access patterns are permitted.   
 
-* **[Limit access to trusted OIDC identity providers](Limit-access-to-trusted-OIDC-identity-providers/Limit-access-to-trusted-OIDC-identity-providers.md)** : Controls that govern the authorization mechanisms used by external OIDC identity providers (IdPs) to grant access to your organization's resources.
+* **[Limit access to trusted OIDC identity providers](Limit-access-to-trusted-OIDC-identity-providers/README.md)** : Controls that govern the authorization mechanisms used by external OIDC identity providers (IdPs) to grant access to your organization's resources.
 
-* **[Service specific controls](Service-specific-controls/Service-specific-controls.md)**: Controls that define baseline security requirements or guidelines that are implemented across individual AWS services to ensure a standardized approach to security and compliance.
+* **[Service specific controls](Service-specific-controls/README.md)**: Controls that define baseline security requirements or guidelines that are implemented across individual AWS services to ensure a standardized approach to security and compliance.
   
 
 
