@@ -41,7 +41,7 @@ The example policies are divided into different categories based on the type of 
 If you are just starting to implement RCPs in your environment, consider our top recommended RCPs. 
 
 * [Only trusted identities can access my resources (Identity perimeter objective).](https://github.com/aws-samples/data-perimeter-policy-examples/blob/main/resource_control_policies/identity_perimeter_rcp.json)
-* [Restrict access to only HTTPS connections to your resources.](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_rcps_examples.html#example-rcp-enforce-ssl)
+* [Restrict access to only HTTPS connections to your resources.](Restrict-resource-access-patterns/Restrict-access-to-only-HTTPS-connections-to-your-resources.json)
 * [Limit access to trusted OIDC identity providers (If applicable)](Limit-access-to-trusted-OIDC-identity-providers/Limit-access-to-trusted-OIDC-identity-providers.md)
 
 
