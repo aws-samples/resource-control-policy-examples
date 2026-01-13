@@ -1,0 +1,31 @@
+{
+    "Version":"2012-10-17",		 	 	 
+    "Statement": [
+        {
+            "Effect": "Deny",
+            "Principal": "*",
+            "Action": [
+                "s3:*",
+                "sqs:*",
+                "kms:*",
+                "secretsmanager:*",
+                "sts:*",
+                "aoss:*",
+                "ecr:*"
+            ],
+            "Resource": "*",
+            "Condition": {
+                "StringNotEqualsIfExists": {
+                    "aws:SourceOrgID": "<my-org-id>",
+                    "aws:SourceAccount": "<third-party-account-a>"
+                },  
+                "Null": {
+                    "aws:SourceAccount": "false"
+                },
+                "Bool": {
+                    "aws:PrincipalIsAWSService": "true"
+                }
+            }
+        }
+    ]
+}
