@@ -1,0 +1,41 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Deny",
+      "Principal": "*",
+      "Action": "sts:GetWebIdentityToken",
+      "Resource": "*",
+      "Condition": {
+        "StringNotEquals": {
+          "sts:SigningAlgorithm": "<YOUR_SIGNING_ALGORITHM>"
+        }
+      }
+    },
+    {
+      "Effect": "Deny",
+      "Principal": "*",
+      "Action": "sts:GetWebIdentityToken",
+      "Resource": "*",
+      "Condition": {
+        "ForAnyValue:StringNotLike": {
+          "sts:IdentityTokenAudience": [
+            "https://api2.example.com",
+            "https://api1.example.com"
+          ]
+        }
+      }
+    },
+    {
+      "Effect": "Deny",
+      "Principal": "*",
+      "Action": "sts:GetWebIdentityToken",
+      "Resource": "*",
+      "Condition": {
+        "NumericGreaterThan": {
+          "sts:DurationSeconds": "300"
+        }
+      }
+    }
+  ]
+}

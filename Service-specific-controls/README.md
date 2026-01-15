@@ -26,6 +26,12 @@
 |[Require that an AWS KMS key is configured with the bypass policy lockout safety check enabled](KMS-Require-that-an-AWS-KMS-key-is-configured-with-the-bypass-policy-lockout-safety-check-enabled.json) |Deny bypassing the KMS key policy lockout safety check when creating a KMS key or updating its key policy, because bypassing this check increases the risk that a KMS key becomes unmanageable.|
 |[Deny the accidental or intentional deletion of a KMS key and only allow specific roles to delete KMS keys.](KMS-Deny-the-accidental-or-intentional-deletion-of-a-KMS-key-and-only-allow-specific-roles-to-delete-KMS-keys.json)|Deny the accidental or intentional deletion of a KMS key and only allow specific roles to delete KMS keys.|
 
+**AWS Identity and Access Management (IAM)**
+
+| Included Policy | Rationale | 
+|-------------|-------------|
+|[Restrict outbound federation to approved audiences, signing algorithms, and token duration](IAM-Restrict-outbound-federation.json) |Restrict outbound federation to pre-approved audiences, enforce that IAM principals request tokens using signing algorithms compatible with your security requirements or the external services you integrate with (replace `<YOUR_SIGNING_ALGORITHM>` with valid values: RS256 or ES384), and restrict token lifetime. Note: While this policy governs audience values in sts:GetWebIdentityToken requests, it cannot enforce which external services are actually used—external services independently validate audience claims. The audience parameter is mandatory, so no null check is required for sts:IdentityTokenAudience.|
+
 
 
 
