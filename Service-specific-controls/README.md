@@ -33,6 +33,12 @@
 |[Restrict outbound federation to approved audiences, signing algorithms, and token duration](IAM-Restrict-outbound-federation.json) |Restrict outbound federation to pre-approved audiences, enforce that IAM principals request tokens using signing algorithms compatible with your security requirements or the external services you integrate with (replace `<YOUR_SIGNING_ALGORITHM>` with valid values: RS256 or ES384), and restrict token lifetime. Note: While this policy governs audience values in sts:GetWebIdentityToken requests, it cannot enforce which external services are actually used—external services independently validate audience claims. The audience parameter is mandatory, so no null check is required for sts:IdentityTokenAudience.|
 
 
+**Amazon Cognito**
+
+| Included Policy | Rationale | 
+|-------------|-------------|
+|[Deny identity pool unauthenticated access](Cognito-Deny-identity-pool-unauthenticated-access.json) |Deny unauthenticated (guest) access to Cognito identity pools by blocking GetId, GetCredentialsForIdentity, and GetOpenIdToken operations for unauthenticated identities, ensuring only authenticated users can obtain credentials.|
+|[Deny deletion and only allow specific roles](Cognito-Deny-deletion-and-only-allow-specific-roles.json) |Prevent accidental or intentional deletion of Cognito user pools or domains, except by specific privileged roles. Replace `[PRIVILEGED_ROLE]` with the actual role name authorized to perform deletions.|
 
 
 

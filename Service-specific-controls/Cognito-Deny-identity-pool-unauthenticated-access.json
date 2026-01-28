@@ -1,0 +1,23 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "DenyUnauthenticatedIdentityPoolAccess",
+      "Effect": "Deny",
+      "Principal": "*",
+      "Action": [
+        "cognito-identity:GetId",
+        "cognito-identity:GetCredentialsForIdentity",
+        "cognito-identity:GetOpenIdToken"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringLike": {
+          "cognito-identity-unauth:IdentityPoolArn": "*"
+        }
+      }
+    }
+  ]
+}
+
+
