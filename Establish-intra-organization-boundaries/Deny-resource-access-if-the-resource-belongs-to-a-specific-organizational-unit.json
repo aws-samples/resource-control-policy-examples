@@ -15,7 +15,14 @@
                 "sts:GetFederationToken",
                 "sts:GetServiceBearerToken",
                 "sts:GetSessionToken",
-                "sts:SetContext"
+                "sts:SetContext",
+                "cognito-identity:*",
+                "cognito-idp:*",
+                "cognito-sync:*",
+                "logs:*",
+                "dynamodb:*",
+                "ecr:*",
+                "aoss:*"
             ],
             "Resource": "*",
             "Condition": {
