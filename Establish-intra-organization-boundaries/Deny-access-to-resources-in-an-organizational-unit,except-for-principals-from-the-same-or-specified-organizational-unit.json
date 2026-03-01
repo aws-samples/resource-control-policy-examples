@@ -8,7 +8,10 @@
              "s3:*",
              "sqs:*",
              "kms:*",
-             "secretsmanager:*"
+             "secretsmanager:*",
+             "logs:*",
+             "dynamodb:*",
+             "ecr:*",
           ],
           "Resource":"*",
           "Condition":{

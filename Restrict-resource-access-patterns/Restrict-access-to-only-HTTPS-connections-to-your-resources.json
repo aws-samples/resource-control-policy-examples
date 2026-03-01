@@ -5,11 +5,18 @@
             "Effect": "Deny",
             "Principal": "*",
             "Action": [
-                "sts:*",
                 "s3:*",
+                "sts:*",
+                "kms:*",
                 "sqs:*",
                 "secretsmanager:*",
-                "kms:*"
+                "cognito-identity:*",
+                "cognito-idp:*",
+                "cognito-sync:*",
+                "logs:*",
+                "dynamodb:*",
+                "ecr:*",
+                "aoss:*"
             ],
             "Resource": "*",
             "Condition": {
