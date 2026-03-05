@@ -1,0 +1,43 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "EnforceOnlyAWSServicePrincipalsAndRolesAssumedByIAMRACanSetIAMRASessionTags",
+      "Effect": "Deny",
+      "Principal": "*",
+      "Action": [
+        "sts:TagSession"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "ForAnyValue:Stringlike": {
+          "aws:TagKeys": [
+            "x509Issuer*,
+            "x509Subject*",
+            "x509SAN*"
+          ]
+        },
+        "BoolIfExists": {
+          "aws:PrincipalIsAwsService": "false"
+        },
+        "Null": {
+          "aws:PrincipalTag/x509Subject/OU": "true",
+          "aws:PrincipalTag/x509Subject/CN": "true",
+          "aws:PrincipalTag/x509Subject/O": "true",
+          "aws:PrincipalTag/x509Subject/C": "true",
+          "aws:PrincipalTag/x509Subject/ST": "true",
+          "aws:PrincipalTag/x509Subject/L": "true",
+          "aws:PrincipalTag/x509Issuer/C": "true",
+          "aws:PrincipalTag/x509Issuer/O": "true",
+          "aws:PrincipalTag/x509Issuer/OU": "true",
+          "aws:PrincipalTag/x509Issuer/ST": "true",
+          "aws:PrincipalTag/x509Issuer/L": "true",
+          "aws:PrincipalTag/x509Issuer/CN": "true"
+          "aws:PrincipalTag/x509SAN/DNS": "true"
+          "aws:PrincipalTag/x509SAN/URI": "true"
+          "aws:PrincipalTag/x509SAN/Name/CN": "true"
+        }
+      }
+    }
+  ]
+}
