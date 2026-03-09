@@ -18,7 +18,6 @@
                 "sts:SetContext",
                 "cognito-identity:*",
                 "cognito-idp:*",
-                "cognito-sync:*",
                 "logs:*",
                 "dynamodb:*",
                 "ecr:*",
