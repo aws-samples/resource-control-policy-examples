@@ -6,12 +6,16 @@
             "Principal": "*",
             "Action": [
                 "s3:*",
-                "sqs:*",
-                "kms:*",
-                "secretsmanager:*",
                 "sts:*",
-                "aoss:*",
-                "ecr:*"
+                "kms:*",
+                "sqs:*",
+                "secretsmanager:*",
+                "cognito-identity:*",
+                "cognito-idp:*",
+                "logs:*",
+                "dynamodb:*",
+                "ecr:*",
+                "aoss:*"
             ],
             "Resource": "*",
             "Condition": {
