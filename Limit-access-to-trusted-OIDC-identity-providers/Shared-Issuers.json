@@ -293,12 +293,12 @@
       "Action": "sts:AssumeRoleWithWebIdentity",
       "Condition": {
         "StringEquals": {
-          "accounts.google.com:organization_number": "123456"
+          "accounts.google.com:google/organization_number": "123456"
         },
         "Null": {
           "accounts.google.com": "false"
           }
       }
-    }
+      }
     ]
   }
