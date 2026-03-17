@@ -32,9 +32,9 @@
           "aws:PrincipalTag/x509Issuer/OU": "true",
           "aws:PrincipalTag/x509Issuer/ST": "true",
           "aws:PrincipalTag/x509Issuer/L": "true",
-          "aws:PrincipalTag/x509Issuer/CN": "true"
-          "aws:PrincipalTag/x509SAN/DNS": "true"
-          "aws:PrincipalTag/x509SAN/URI": "true"
+          "aws:PrincipalTag/x509Issuer/CN": "true",
+          "aws:PrincipalTag/x509SAN/DNS": "true",
+          "aws:PrincipalTag/x509SAN/URI": "true",
           "aws:PrincipalTag/x509SAN/Name/CN": "true"
         }
       }
