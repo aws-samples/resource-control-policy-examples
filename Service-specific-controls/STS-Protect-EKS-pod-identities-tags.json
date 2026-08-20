@@ -10,16 +10,6 @@
       ],
       "Resource": "*",
       "Condition": {
-        "ForAnyValue:StringEquals": {
-          "aws:TagKeys": [
-            "eks-cluster-arn",
-            "eks-cluster-name",
-            "kubernetes-namespace",
-            "kubernetes-service-account",
-            "kubernetes-pod-name",
-            "kubernetes-pod-uid"
-          ]
-        },
         "BoolIfExists": {
           "aws:PrincipalIsAwsService": "false"
         },
@@ -29,7 +19,123 @@
           "aws:PrincipalTag/kubernetes-namespace": "true",
           "aws:PrincipalTag/kubernetes-service-account": "true",
           "aws:PrincipalTag/kubernetes-pod-name": "true",
-          "aws:PrincipalTag/kubernetes-pod-uid": "true"
+          "aws:PrincipalTag/kubernetes-pod-uid": "true",
+          "aws:RequestTag/eks-cluster-arn": "false"
+        }
+      }
+    },
+    {
+      "Sid": "EnforceOnlyAWSServicePrincipalsAndRolesAssumedByEKSCanSetEKSSessiontTags2",
+      "Effect": "Deny",
+      "Principal": "*",
+      "Action": [
+        "sts:TagSession"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "BoolIfExists": {
+          "aws:PrincipalIsAwsService": "false"
+        },
+        "Null": {
+          "aws:PrincipalTag/eks-cluster-arn": "true",
+          "aws:PrincipalTag/eks-cluster-name": "true",
+          "aws:PrincipalTag/kubernetes-namespace": "true",
+          "aws:PrincipalTag/kubernetes-service-account": "true",
+          "aws:PrincipalTag/kubernetes-pod-name": "true",
+          "aws:PrincipalTag/kubernetes-pod-uid": "true",
+          "aws:RequestTag/eks-cluster-name": "false"
+        }
+      }
+    },
+    {
+      "Sid": "EnforceOnlyAWSServicePrincipalsAndRolesAssumedByEKSCanSetEKSSessiontTags3",
+      "Effect": "Deny",
+      "Principal": "*",
+      "Action": [
+        "sts:TagSession"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "BoolIfExists": {
+          "aws:PrincipalIsAwsService": "false"
+        },
+        "Null": {
+          "aws:PrincipalTag/eks-cluster-arn": "true",
+          "aws:PrincipalTag/eks-cluster-name": "true",
+          "aws:PrincipalTag/kubernetes-namespace": "true",
+          "aws:PrincipalTag/kubernetes-service-account": "true",
+          "aws:PrincipalTag/kubernetes-pod-name": "true",
+          "aws:PrincipalTag/kubernetes-pod-uid": "true",
+          "aws:RequestTag/kubernetes-namespace": "false"
+        }
+      }
+    },
+    {
+      "Sid": "EnforceOnlyAWSServicePrincipalsAndRolesAssumedByEKSCanSetEKSSessiontTags4",
+      "Effect": "Deny",
+      "Principal": "*",
+      "Action": [
+        "sts:TagSession"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "BoolIfExists": {
+          "aws:PrincipalIsAwsService": "false"
+        },
+        "Null": {
+          "aws:PrincipalTag/eks-cluster-arn": "true",
+          "aws:PrincipalTag/eks-cluster-name": "true",
+          "aws:PrincipalTag/kubernetes-namespace": "true",
+          "aws:PrincipalTag/kubernetes-service-account": "true",
+          "aws:PrincipalTag/kubernetes-pod-name": "true",
+          "aws:PrincipalTag/kubernetes-pod-uid": "true",
+          "aws:RequestTag/kubernetes-service-account": "false"
+        }
+      }
+    },
+    {
+      "Sid": "EnforceOnlyAWSServicePrincipalsAndRolesAssumedByEKSCanSetEKSSessiontTags5",
+      "Effect": "Deny",
+      "Principal": "*",
+      "Action": [
+        "sts:TagSession"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "BoolIfExists": {
+          "aws:PrincipalIsAwsService": "false"
+        },
+        "Null": {
+          "aws:PrincipalTag/eks-cluster-arn": "true",
+          "aws:PrincipalTag/eks-cluster-name": "true",
+          "aws:PrincipalTag/kubernetes-namespace": "true",
+          "aws:PrincipalTag/kubernetes-service-account": "true",
+          "aws:PrincipalTag/kubernetes-pod-name": "true",
+          "aws:PrincipalTag/kubernetes-pod-uid": "true",
+          "aws:RequestTag/kubernetes-pod-name": "false"
+        }
+      }
+    },
+    {
+      "Sid": "EnforceOnlyAWSServicePrincipalsAndRolesAssumedByEKSCanSetEKSSessiontTags6",
+      "Effect": "Deny",
+      "Principal": "*",
+      "Action": [
+        "sts:TagSession"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "BoolIfExists": {
+          "aws:PrincipalIsAwsService": "false"
+        },
+        "Null": {
+          "aws:PrincipalTag/eks-cluster-arn": "true",
+          "aws:PrincipalTag/eks-cluster-name": "true",
+          "aws:PrincipalTag/kubernetes-namespace": "true",
+          "aws:PrincipalTag/kubernetes-service-account": "true",
+          "aws:PrincipalTag/kubernetes-pod-name": "true",
+          "aws:PrincipalTag/kubernetes-pod-uid": "true",
+          "aws:RequestTag/kubernetes-pod-uid": "false"
         }
       }
     }
