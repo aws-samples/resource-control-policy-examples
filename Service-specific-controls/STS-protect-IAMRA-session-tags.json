@@ -10,7 +10,7 @@
       ],
       "Resource": "*",
       "Condition": {
-        "ForAnyValue:Stringlike": {
+        "ForAnyValue:StringEqualsIgnoreCase": {
           "aws:TagKeys": [
             "x509Subject/OU",
             "x509Subject/CN",
