@@ -1,0 +1,21 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "DenyTrustAnchorChangeUnapprovedRole",
+      "Effect": "Deny",
+      "Principal": "*",
+      "Action": [
+        "rolesanywhere:DisableTrustAnchor",
+		    "rolesanywhere:EnableTrustAnchor",
+		    "rolesanywhere:UpdateTrustAnchor"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "ArnNotLike": {
+          "aws:PrincipalArn": "arn:aws:iam::${Account}:role/[PRIVILEGED_ROLE]"
+        }
+      }
+    }
+  ]
+}
