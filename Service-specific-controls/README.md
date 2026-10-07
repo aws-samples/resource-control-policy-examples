@@ -33,6 +33,13 @@
 |[Restrict outbound federation to approved audiences, signing algorithms, and token duration](IAM-Restrict-outbound-federation.json) |Restrict outbound federation to pre-approved audiences, enforce that IAM principals request tokens using signing algorithms compatible with your security requirements or the external services you integrate with (replace `<YOUR_SIGNING_ALGORITHM>` with valid values: RS256 or ES384), and restrict token lifetime. Note: While this policy governs audience values in sts:GetWebIdentityToken requests, it cannot enforce which external services are actually used—external services independently validate audience claims. The audience parameter is mandatory, so no null check is required for sts:IdentityTokenAudience.|
 
 
+**AWS IAM Roles Anywhere**
+
+| Included Policy | Rationale |
+|-------------|-------------|
+|[AWS IAM Roles Anywhere controls](AWS-IAMRolesAnywhere/README.md) |Protect IAM Roles Anywhere configuration and restrict session creation to expected networks. See the service-specific page for the available RCP examples, required customization, and deployment considerations.|
+
+
 **Amazon Cognito**
 
 | Included Policy | Rationale | 

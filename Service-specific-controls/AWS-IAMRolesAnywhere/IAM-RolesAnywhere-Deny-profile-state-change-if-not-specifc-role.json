@@ -1,0 +1,21 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "DenyProfileStateChangeUnapprovedRole",
+      "Effect": "Deny",
+      "Principal": "*",
+      "Action": [
+        "rolesanywhere:DisableProfile",
+		    "rolesanywhere:EnableProfile",
+        "rolesanywhere:UpdateProfile"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "ArnNotLike": {
+          "aws:PrincipalArn": "arn:aws:iam::${Account}:role/[PRIVILEGED_ROLE]"
+        }
+      }
+    }
+  ]
+}
